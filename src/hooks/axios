@@ -1,0 +1,16 @@
+import axios from 'axios';
+
+const useAxios = () => {
+  const fetchData = async (url, method = 'GET', data = null) => {
+    const response = await axios({
+      url,
+      method,
+      data,
+    });
+    return response.data;
+  };
+
+  return { fetchData };
+};
+
+export default useAxios;
